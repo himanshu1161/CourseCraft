@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# CourseCraft
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+CourseCraft is a web application designed to streamline course management for students. The application provides an intuitive interface to browse available courses, view detailed course information, and manage enrolled courses through a personalized student dashboard. The dashboard allows students to track their progress, see due dates, and mark courses as completed.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Installation](#installation)
+- [Starting the Development Server](#starting-the-development-server)
+- [Starting the API Server](#starting-the-api-server)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [API Routes](#api-routes)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/himanshu1161/CourseCraft
+   cd coursecraft
 
-### `npm test`
+2. Install Dependencies:
+   npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Starting the Development Server
+-  To run the development server:
+   npm start
 
-### `npm run build`
+## Starting the API Server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Run the API Server:
+   npx json-server --watch db.json --port 3001
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Course Page
 
-### `npm run eject`
+- View Courses: Browse all available courses with brief details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Course Details: Click on a course to view detailed information including instructor, duration, description, syllabus, and real-time likes count.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Student Dashboard
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Enrolled Courses: View all enrolled courses with information such as progress bar, due date, and a button to mark courses as completed.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Mark as Completed: Mark a course as completed and update its status instantly.
 
-## Learn More
+- Progress Bar: Track progress with a visual progress bar for each course.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
 
-### Code Splitting
+- React: Frontend framework for building user interfaces.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Redux: State management for managing course and student data.
 
-### Analyzing the Bundle Size
+- json-server: Mock API server for development.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Tailwind CSS: Utility-first CSS framework for styling.
 
-### Making a Progressive Web App
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+coursecraft/
+├── public/
+├── src/
+│   ├── actions/
+│   ├── components/
+│   ├── reducers/
+│   ├── store/
+│   ├── App.js
+│   └── index.js
+├── db.json
+├── package.json
+└── README.md
 
-### Advanced Configuration
+## API ROUTES
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- GET /courses: Fetch all courses.
+- GET /courses/id
+: Fetch a specific course by ID.
 
-### Deployment
+- Example Requests
+  Fetch All Courses:
+  curl http://localhost:3001/courses
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  Fetch Specific Course:
+  curl http://localhost:3001/courses/1
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
